@@ -1,4 +1,6 @@
-grunt-talk
-==========
+Introductory talk about Grunt (in spanish).
 
-Introductory talk about Grunt (in spanish) — Automatizando el desarrollo front-end con Grunt.
+# Automatizando el desarrollo front-end con Grunt.
+
+
+
