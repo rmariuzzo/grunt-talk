@@ -1,3 +1,3 @@
-# Automatizando el desarrollo front-end con Grunt.
+# Automatizando el Desarrollo Front-End utilizando Grunt.
 
-> Automating front-end development with Grunt
+> Automating front-end development using Grunt
