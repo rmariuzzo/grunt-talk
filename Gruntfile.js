@@ -1,7 +1,20 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-	grunt.registerTask('default', function() {
-		grunt.log.write('Hello World from Grunt!');
-	});
+    grunt.initConfig({
+
+        concat: {
+            dist: {
+                src: [
+                    'src/css/form.css',
+                    'src/css/listas.css',
+                    'src/css/tipografia.css'
+                ],
+                dest: 'dist/css/all.css'
+            }
+        }
+
+    });
+
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
 };
