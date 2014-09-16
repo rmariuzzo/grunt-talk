@@ -78,6 +78,18 @@ module.exports = function (grunt) {
                     dest: 'dist/'
                 }]
             }
+        },
+
+        clean: {
+            dist: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        'dist'
+                    ]
+                }]
+            },
         }
 
     });
@@ -90,9 +102,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-usemin');
 
     grunt.registerTask('build', [
+        'clean',
         'useminPrepare',
         'copy',
         'jshint',
