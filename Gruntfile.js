@@ -4,34 +4,7 @@ module.exports = function (grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        concat: {
-            css: {
-                src: [
-                    'src/css/form.css',
-                    'src/css/listas.css',
-                    'src/css/tipografia.css'
-                ],
-                dest: 'dist/css/all.css'
-            },
-            js: {
-                src: [
-                    'src/js/lib/jquery-2.1.1.min.js',
-                    'src/js/lib/jquery.nicescroll.min.js',
-                    'src/js/sumar.js',
-                    'src/js/restar.js',
-                    'src/js/multiplicar.js',
-                    'src/js/dividir.js',
-                    'src/js/app.js'
-                ],
-                dest: 'dist/js/all.js'
-            }
-        },
-
         cssmin: {
-            dist: {
-                src: 'dist/css/all.css',
-                dest: 'dist/css/all.min.css'
-            },
             options: {
                 banner: '/*! <%= pkg.name %>, <%= pkg.version %>, <%= grunt.template.today("yyyy") %> - Rubens Mariuzzo */'
             }
@@ -82,22 +55,18 @@ module.exports = function (grunt) {
             }
         },
 
-        uglify: {
-            js: {
-                src: 'dist/js/all.js',
-                dest: 'dist/js/all.min.js'
-            }
-        },
-
         useminPrepare: {
-            html: 'dist/**/*.html',
+            html: 'src/**/*.html',
             options: {
                 dest: 'dist'
             }
         },
 
         usemin: {
-            html: 'dist/**/*.html'
+            html: 'dist/**/*.html',
+            options: {
+                dest: 'dist'
+            }
         },
 
         copy: {
@@ -120,10 +89,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-usemin');
 
     grunt.registerTask('build', [
         'useminPrepare',
+        'copy',
         'jshint',
         'concat',
         'cssmin',
