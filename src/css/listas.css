@@ -1,0 +1,12 @@
+/*
+ * Estilos de Listas.
+ */
+
+ul {
+  margin: 20px 0;
+  padding: 0 0 0 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}

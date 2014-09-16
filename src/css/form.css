@@ -1,0 +1,9 @@
+/*
+ * Estilos de Form.
+ */
+
+form {
+  margin: 0;
+  padding: 0;
+  border: red solid 1px;
+}
